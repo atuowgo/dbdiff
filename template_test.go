@@ -29,7 +29,7 @@ func (this *StudentRowMapper) MapRow(rs *sql.Rows, rowNum int, out interface{}) 
 }
 
 func getDBConn() *DBConn {
-	return NewDBConn(MYSQL, "root", "root12345", "localhost", 3306, "sqldiff")
+	return NewDBConn(MYSQL, "root", "root12345", "localhost", 3306, "dbdiff")
 }
 
 func getDB() *sql.DB {

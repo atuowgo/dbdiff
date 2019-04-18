@@ -36,7 +36,7 @@ func (comp *KeySlice) Compare(itemsLeft, itemsRight interface{}) {
 	sort.Sort(sortableSliceLeft)
 	sort.Sort(sortableSliceRight)
 
-	for ; idxLeft < sizeLeft && idxRight < sizeRight; {
+	for idxLeft < sizeLeft && idxRight < sizeRight {
 		var (
 			itemLeft  = reflect.ValueOf(itemsLeft).Elem().Index(idxLeft).Interface()
 			itemRight = reflect.ValueOf(itemsRight).Elem().Index(idxRight).Interface()
@@ -55,13 +55,13 @@ func (comp *KeySlice) Compare(itemsLeft, itemsRight interface{}) {
 		}
 	}
 
-	for ; idxLeft < sizeLeft; {
+	for idxLeft < sizeLeft {
 		itemLeft := reflect.ValueOf(itemsLeft).Elem().Index(idxLeft).Interface()
 		comp.keyCompareAction.ActionLeftExists(itemLeft)
 		idxLeft++
 	}
 
-	for ; idxRight < sizeRight; {
+	for idxRight < sizeRight {
 		itemRight := reflect.ValueOf(itemsRight).Elem().Index(idxRight).Interface()
 		comp.keyCompareAction.ActionRightExists(itemRight)
 		idxRight++

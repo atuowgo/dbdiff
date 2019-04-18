@@ -13,17 +13,17 @@ CREATE TABLE `student` (
   `age2` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
 )
- */
+*/
 
 func getDBConnNew() *DBConn {
-	return NewDBConn(MYSQL, "root", "root12345", "localhost", 3306, "sqldiff2")
+	return NewDBConn(MYSQL, "root", "root12345", "localhost", 3306, "dbdiff2")
 }
 
-func TestSqlDiff_ParseDiff(t *testing.T) {
+func TestDBDiff_ParseDiff(t *testing.T) {
 	connOld := getDBConn()
 	connNew := getDBConnNew()
-	sqlDiff := NewSqlDiff()
-	diffDataBase, err := sqlDiff.ParseDiff(connOld,connNew)
+	dbDiff := NewDBDiff()
+	diffDataBase, err := dbDiff.ParseDiff(connOld, connNew)
 	if err != nil {
 		log.Fatal(err)
 	}

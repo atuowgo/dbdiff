@@ -9,7 +9,7 @@ import (
 type DBDiff struct {
 }
 
-func NewSqlDiff() *DBDiff {
+func NewDBDiff() *DBDiff {
 	return &DBDiff{}
 }
 
