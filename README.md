@@ -1,7 +1,7 @@
 # Overview
 dbdiff is a library to check the diff between two db
 
-#Installing
+# Installing
 <pre>
     <code>
     go get -u github.com/atuowgo/dbdiff
@@ -16,7 +16,7 @@ Next, include in your application:
     </code>
 </pre>
 
-#Using
+# Using
 <pre>
     <code>
     connOld := getDBConn()
